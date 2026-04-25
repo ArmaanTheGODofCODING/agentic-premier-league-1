@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APL Stadium Orchestrator</title>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <div class="logo-container">
+                <img src="logo.png" alt="Agentic Premier League Logo" onerror="this.src='https://ui-avatars.com/api/?name=APL&background=1a73e8&color=fff&size=150'">
+                <div style="font-size: 22px; font-weight: 700; color: var(--google-blue); margin-bottom: 4px;">Armaan Kapoor</div>
+            </div>
+            <h1>Stadium Pulse</h1>
+            <p>Live Logistics & Infrastructure Dashboard</p>
+        </header>
+
+        <div class="controls-card">
+            <div class="form-group">
+                <label>Region</label>
+                <select id="state"><option value="">Select State</option></select>
+            </div>
+            <div class="form-group">
+                <label>Location</label>
+                <select id="city"><option value="">Select City</option></select>
+            </div>
+            <div class="form-group" style="grid-column: 1 / -1;">
+                <label>Venue</label>
+                <select id="stadium"><option value="">Select Stadium</option></select>
+            </div>
+
+            <button class="action-btn">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                Load Live Dashboard
+            </button>
+        </div>
+
+        <div class="dashboard-container" id="dashboard" style="display: none;">
+            <div class="dashboard-header">
+                <h2>Live Situation Report</h2>
+                <div class="report-meta" id="report-time">--:--</div>
+            </div>
+            
+            <div id="error-message" class="error-banner" style="display: none;"></div>
+
+            <div class="dashboard-grid">
+                <!-- Weather & Context Card -->
+                <div class="data-card">
+                    <h3>Environment & Infrastructure</h3>
+                    <div class="metric-group">
+                        <span class="metric-label">Weather</span>
+                        <span class="metric-value" id="val-weather">--</span>
+                    </div>
+                    <div class="metric-group">
+                        <span class="metric-label">Estimated Capacity</span>
+                        <span class="metric-value" id="val-capacity">--</span>
+                    </div>
+                    <div class="metric-group">
+                        <span class="metric-label">Infrastructure Note</span>
+                        <span class="metric-text" id="val-infra">--</span>
+                    </div>
+                </div>
+
+                <!-- Logistics Card -->
+                <div class="data-card">
+                    <h3>Emergency Logistics</h3>
+                    <div class="logistics-list" id="logistics-list">
+                        <!-- Populated dynamically -->
+                    </div>
+                </div>
+
+                <!-- AI Recommendations -->
+                <div class="data-card full-width">
+                    <h3>Operational Directives</h3>
+                    <div class="directives-list" id="directives-list">
+                        <!-- Populated dynamically -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="app.js"></script>
+</body>
+</html>
