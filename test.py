@@ -2,7 +2,7 @@ import urllib.request
 import json
 import urllib.error
 
-url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=AIzaSyBjuMWqt30i0CDj5qGk4gVZNEGWDp9mNZA"
+url = "API"
 data = json.dumps({"contents": [{"parts": [{"text": "hi"}]}]}).encode('utf-8')
 req = urllib.request.Request(url, data=data, headers={'Content-Type': 'application/json'}, method='POST')
 
