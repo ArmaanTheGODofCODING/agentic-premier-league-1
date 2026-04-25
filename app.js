@@ -4,7 +4,7 @@ const stadiumSelect = document.getElementById('stadium');
 const actionBtn = document.querySelector('.action-btn');
 const dashboard = document.getElementById('dashboard');
 const errorBanner = document.getElementById('error-message');
-const apiKeyInput = 'AIzaSyBjuMWqt30i0CDj5qGk4gVZNEGWDp9mNZA';
+const apiKeyInput = 'YOUR_API_KEY';
 
 // Comprehensive Indian Stadium Data
 const venuesData = {
